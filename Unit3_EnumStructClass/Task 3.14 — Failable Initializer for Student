@@ -1,0 +1,25 @@
+
+struct Student {
+    var name: String
+    var marks: Int
+
+    init?(name: String, marks: Int) {
+        guard (0...100).contains(marks) else {
+            return nil
+        }
+
+        self.name = name
+        self.marks = marks
+    }
+}
+
+if let student = Student(name: "Arun", marks: 85) {
+    print("Student:", student.name)
+    print("Marks:", student.marks)
+} else {
+    print("Invalid marks")
+}
+
+if Student(name: "Priya", marks: 120) == nil {
+    print("Student creation failed")
+}
